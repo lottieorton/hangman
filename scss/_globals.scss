@@ -1,0 +1,6 @@
+@use './mixins/mixins' as *;
+
+body {
+    @include flex(column);
+    align-items: center;
+}
