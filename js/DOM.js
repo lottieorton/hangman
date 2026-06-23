@@ -13,12 +13,17 @@ export const renderKey = (letter, handlePlayerGuess) => {
     keysParent.appendChild(key);
 };
 
-export const renderNextImage = (incorrectGuessesRemaining, guesses) => {
+export const renderNextImage = (incorrectGuessesRemaining, guesses, resetGame = false) => {
     let oldImageNumber = guesses - incorrectGuessesRemaining;
-    let newImageNumber = oldImageNumber + 1;
+    let newImageNumber = resetGame ? 0 : oldImageNumber + 1;
     document.querySelector(`#img-${oldImageNumber}`).classList.add("hidden");
     document.querySelector(`#img-${newImageNumber}`).classList.remove("hidden");
 };
+
+export const toggleAllKeys = (shouldDisable) => {
+    const buttons = document.querySelectorAll('.key-btn');
+    buttons.forEach(key => key.disabled = shouldDisable);
+}
 
 export const renderGameFinishedMessage = (result) => {
     const gameFinishedContainer = document.querySelector('.game-finished');
@@ -28,9 +33,9 @@ export const renderGameFinishedMessage = (result) => {
     gameFinishedContainer.appendChild(message);
 }
 
-export const disableAllKeys = () => {
-    const buttons = document.querySelectorAll('.key-btn');
-    buttons.forEach(key => key.disabled = true);
+export const removeGameFinishedMessage = (result) => {
+    const gameFinishedContainer = document.querySelector('.game-finished');
+    gameFinishedContainer.innerHTML = '';
 }
 
 export const renderScores = (wins, losses) => {
@@ -39,4 +44,12 @@ export const renderScores = (wins, losses) => {
         <h2>Wins: ${wins}</h2>
         <h2>Losses: ${losses}</h2>
     `;
+}
+
+export const renderElement = (element) => {
+    element.classList.remove("hidden");
+}
+
+export const hideElement = (element) => {
+    element.classList.add("hidden");
 }
