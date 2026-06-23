@@ -5,8 +5,20 @@ body {
   align-items: center;
 }
 
-.main-heading {
+.header__main-heading {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.diagram {
+  border: 1px solid black;
+}
+
+.hangman-word-container {
+  display: flex(row, center);
+}
+
+.hangman-word {
   text-align: center;
 }
 

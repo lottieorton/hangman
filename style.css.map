@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["scss/_globals.scss","scss/mixins/_mixins.scss","scss/components/_header.scss"],"names":[],"mappings":"AAEA;ECDI;EACA,gBDCc;ECAd,iBAHoC;EDIpC;;;AEJJ;EACI;EACA","file":"style.css"}
+{"version":3,"sourceRoot":"","sources":["scss/_globals.scss","scss/mixins/_mixins.scss","scss/components/_header.scss","scss/components/_diagram.scss","scss/components/_hangman-word.scss"],"names":[],"mappings":"AAEA;ECDI;EACA,gBDCc;ECAd,iBAHoC;EDIpC;;;AEHA;EACI;EACA;;;ACHR;EACI;;;ACDJ;EACI;;;AAGJ;EACI","file":"style.css"}
