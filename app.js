@@ -1,9 +1,10 @@
 import  wordList  from './assets/word-list.json' with { type: 'json' };
-import { renderKey, renderNextImage, renderGameFinishedMessage, disableAllKeys, renderScores } from './js/DOM.js';
+import { renderKey, renderNextImage, toggleAllKeys, renderGameFinishedMessage, removeGameFinishedMessage, renderScores, renderElement, hideElement } from './js/DOM.js';
 import { revealCharacters } from './js/word-functions.js';
 
 // html elements
-const hangmanWordContainer = document.querySelector('.hangman-word-container');
+const hangmanWord = document.querySelector('.hangman-word');
+const btn = document.querySelector('.btn');
 
 // initial setup
 let wins = 0;
@@ -18,15 +19,19 @@ const initialGameSetup = () => {
     word = wordList[Math.floor(Math.random() * wordList.length)];
     wordArr = word.split("");
     hangmanWordArr =  wordArr.map(letter => "_");
+    hangmanWord.innerHTML = hangmanWordArr.join(' ');
     incorrectGuessesRemaining = guesses;
+    hideElement(btn);
 };
 initialGameSetup();
 
-// creating hangman word element
-const hangmanWord = document.createElement('h2');
-hangmanWord.className = "hangman-word";
-hangmanWord.innerHTML = hangmanWordArr.join(' ');
-hangmanWordContainer.appendChild(hangmanWord);
+// add event listener to play again button
+btn.addEventListener('click', (e) => {
+    renderNextImage(incorrectGuessesRemaining, guesses, true);
+    initialGameSetup();
+    toggleAllKeys(false);
+    removeGameFinishedMessage();
+});
 
 // handle guess logic
 const checkIfGameOver = () => {
@@ -50,7 +55,8 @@ const handlePlayerGuess = (guess) => {
         gameResult === 'win' ? wins++ : losses++;
         renderGameFinishedMessage(gameResult);
         renderScores(wins, losses);
-        disableAllKeys();
+        toggleAllKeys(true);
+        renderElement(btn);
     };
 };
 
