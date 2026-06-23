@@ -12,13 +12,14 @@
         <h1 class="header__main-heading">Hangman</h1>
     </header>
     <main class="game-container">
+        <section class="game-finished"></section>
         <figure class="diagram">
             <img id="img-0" src="./assets/imgs/h-0.jpg" alt="hangman-image-start" />
             <img id="img-1" src="./assets/imgs/h-1.jpg" alt="hangman image 1 life lost" class="hidden" />
             <img id="img-2" src="./assets/imgs/h-2.jpg" alt="hangman image 2 lives lost" class="hidden" />
             <img id="img-3" src="./assets/imgs/h-3.jpg" alt="hangman image 3 lives lost" class="hidden" />
             <img id="img-4" src="./assets/imgs/h-4.jpg" alt="hangman image 4 lives lost" class="hidden" />
-            <img id="img-5"src="./assets/imgs/h-5.jpg" alt="hangman  mage 5 lives lost" class="hidden" />
+            <img id="img-5" src="./assets/imgs/h-5.jpg" alt="hangman  mage 5 lives lost" class="hidden" />
             <img id="img-6" src="./assets/imgs/h-6.jpg" alt="hangman image 6 lives lost" class="hidden" />
             <img id="img-7" src="./assets/imgs/h-7.jpg" alt="hangman image 7 lives lost" class="hidden" />
             <img id="img-8" src="./assets/imgs/h-8.jpg" alt="hangman image 8 lives lost" class="hidden" />
@@ -27,6 +28,10 @@
         </figure>
         <section class="hangman-word-container"></section>
         <menu class="keys"></menu>
+        <section class="scores-container">
+            <h2>Wins: 0</h2>
+            <h2>Losses: 0</h2>
+        </section>
     </main>
 </body>
 </html>

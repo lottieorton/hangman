@@ -1,12 +1,14 @@
 import  wordList  from './assets/word-list.json' with { type: 'json' };
-import { renderKey, renderNextImage } from './js/DOM.js';
+import { renderKey, renderNextImage, renderGameFinishedMessage, disableAllKeys, renderScores } from './js/DOM.js';
 import { revealCharacters } from './js/word-functions.js';
 
 // html elements
 const hangmanWordContainer = document.querySelector('.hangman-word-container');
 
-// initial game setup
-const guesses = 9;
+// initial setup
+let wins = 0;
+let losses = 0;
+const guesses = 10;
 let word = '';
 let wordArr = [];
 let hangmanWordArr = [];
@@ -27,19 +29,31 @@ hangmanWord.innerHTML = hangmanWordArr.join(' ');
 hangmanWordContainer.appendChild(hangmanWord);
 
 // handle guess logic
+const checkIfGameOver = () => {
+    if(!hangmanWordArr.includes('_')) return 'win';
+    if(incorrectGuessesRemaining === 0) return 'loss';
+    return false;
+}
+
 const handlePlayerGuess = (guess) => {
     const charInWord = wordArr.includes(guess);
     if(charInWord) {
         const newWord = revealCharacters(guess, wordArr, hangmanWordArr);
         hangmanWordArr = newWord; 
         hangmanWord.innerHTML = hangmanWordArr.join(' ');
-        return;
     } else {
         renderNextImage(incorrectGuessesRemaining, guesses);
         incorrectGuessesRemaining--;
     }
-}
+    const gameResult = checkIfGameOver();
+    if(gameResult) {
+        gameResult === 'win' ? wins++ : losses++;
+        renderGameFinishedMessage(gameResult);
+        renderScores(wins, losses);
+        disableAllKeys();
+    };
+};
 
 // rendering the letter keys
-const alphabet = ['a', 'b', 'c', 'd', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 alphabet.forEach((char) => renderKey(char, handlePlayerGuess));
