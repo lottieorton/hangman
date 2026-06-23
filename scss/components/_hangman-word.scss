@@ -1,5 +1,7 @@
+@use '../mixins/mixins' as *;
+
 .hangman-word-container {
-    display: flex(row, center);
+    @include flex(row, center);
 }
 
 .hangman-word {

@@ -1,3 +1,6 @@
+@use '../mixins/mixins' as *;
+
 .diagram {
+    @include flex(row, center);
     border: 1px solid black;
 }
