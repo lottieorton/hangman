@@ -1,7 +1,7 @@
 export const renderKey = (letter, handlePlayerGuess) => {
     const keysParent = document.querySelector('.keys');
     const key = document.createElement('button');
-    key.className = 'key-btn';
+    key.className = 'btn key-btn';
     key.id = `key-${letter}`;
     key.setAttribute('data-key', letter);
     key.innerHTML = letter;
