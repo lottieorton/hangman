@@ -1,0 +1,8 @@
+@use '../mixins/mixins' as *;
+@use '../variables/fonts' as *;
+@use '../variables/colors' as c;
+
+.game-container {
+    @include flex(column);
+    align-items: center;
+}

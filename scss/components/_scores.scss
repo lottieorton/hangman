@@ -1,0 +1,12 @@
+@use '../mixins/mixins' as *;
+
+.scores {
+    @include flex(row, space-between);
+    padding: 1em;
+    width: 80%;
+    
+    &__title {
+        margin: 0;
+        padding: 0.5em;
+    }
+}

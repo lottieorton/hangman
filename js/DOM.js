@@ -39,11 +39,10 @@ export const removeGameFinishedMessage = (result) => {
 }
 
 export const renderScores = (wins, losses) => {
-    const scoresContainer = document.querySelector('.scores-container');
-    scoresContainer.innerHTML = `
-        <h2>Wins: ${wins}</h2>
-        <h2>Losses: ${losses}</h2>
-    `;
+    const winScore = document.querySelector(".scores__title--win");
+    const lossScore = document.querySelector(".scores__title--loss");
+    winScore.innerText = wins;
+    lossScore.innerText = losses;
 }
 
 export const renderElement = (element) => {

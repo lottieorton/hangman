@@ -1,5 +1,7 @@
 @use './globals';
 @use './normalize';
+@use './components/game-container';
 @use './components/header';
 @use './components/diagram';
 @use './components/hangman-word';
+@use './components/scores';

@@ -3,7 +3,7 @@ import { renderKey, renderNextImage, toggleAllKeys, renderGameFinishedMessage, r
 import { revealCharacters } from './js/word-functions.js';
 
 // html elements
-const hangmanWord = document.querySelector('.hangman-word');
+const hangmanWord = document.querySelector('.hangman-word__header');
 const btn = document.querySelector('.btn');
 
 // initial setup

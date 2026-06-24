@@ -1,6 +1,9 @@
+@use '../variables/fonts' as *;
+
 .header {
     &__main-heading {
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         text-align: center;
+        font-size: 3.5em;
+        margin: 0.5em 0 0 0;
     }
 }
