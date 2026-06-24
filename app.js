@@ -4,7 +4,7 @@ import { revealCharacters } from './js/word-functions.js';
 
 // html elements
 const hangmanWord = document.querySelector('.hangman-word__header');
-const btn = document.querySelector('.btn');
+const playAgainBtn = document.querySelector('.game-finished__btn');
 
 // initial setup
 let wins = 0;
@@ -21,12 +21,12 @@ const initialGameSetup = () => {
     hangmanWordArr =  wordArr.map(letter => "_");
     hangmanWord.innerHTML = hangmanWordArr.join(' ');
     incorrectGuessesRemaining = guesses;
-    hideElement(btn);
+    hideElement(playAgainBtn);
 };
 initialGameSetup();
 
 // add event listener to play again button
-btn.addEventListener('click', (e) => {
+playAgainBtn.addEventListener('click', (e) => {
     renderNextImage(incorrectGuessesRemaining, guesses, true);
     initialGameSetup();
     toggleAllKeys(false);
@@ -56,7 +56,7 @@ const handlePlayerGuess = (guess) => {
         renderGameFinishedMessage(gameResult);
         renderScores(wins, losses);
         toggleAllKeys(true);
-        renderElement(btn);
+        renderElement(playAgainBtn);
     };
 };
 

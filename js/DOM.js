@@ -30,11 +30,11 @@ export const renderGameFinishedMessage = (result) => {
     const message = document.createElement('h2');
     message.className = 'game-finished__message';
     message.innerText = result === 'win' ? 'Wooo, well done on beating the hangman!' : 'They got you this time, better luck next time';
-    gameFinishedContainer.appendChild(message);
+    gameFinishedContainer.insertAdjacentElement('afterbegin', message);
 }
 
 export const removeGameFinishedMessage = (result) => {
-    const gameFinishedContainer = document.querySelector('.game-finished');
+    const gameFinishedContainer = document.querySelector('.game-finished__message');
     gameFinishedContainer.innerHTML = '';
 }
 

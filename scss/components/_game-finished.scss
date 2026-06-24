@@ -1,0 +1,11 @@
+@use '../mixins/mixins' as *;
+
+.game-finished{
+    @include flex(column);
+    align-items: center;
+    padding: 0 1.5em 1em 1.5em;
+    gap: 0.5em;
+    &__message {
+        margin: 0;
+    }
+}

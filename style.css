@@ -297,4 +297,16 @@ summary {
   gap: 0.5em;
 }
 
+.game-finished {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 1.5em 1em 1.5em;
+  gap: 0.5em;
+}
+.game-finished__message {
+  margin: 0;
+}
+
 /*# sourceMappingURL=style.css.map */
