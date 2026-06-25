@@ -76,4 +76,4 @@ const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm
 alphabet.forEach((char) => renderKey(char, handlePlayerGuess));
 
 // adding in keyboard functionality
-document.addEventListener('keydown', event => handleKeyboardInput(event, handlePlayerGuess));
+document.addEventListener('keydown', event => handleKeyboardInput(event, handlePlayerGuess, alphabet));

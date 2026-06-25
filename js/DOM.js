@@ -53,8 +53,9 @@ export const hideElement = (element) => {
     element.classList.add("hidden");
 }
 
-export const handleKeyboardInput = (e, handleGuess) => {
-    const letter = e.key;
+export const handleKeyboardInput = (e, handleGuess, keyList) => {
+    const letter = e.key.toLowerCase();
+    if(!keyList.includes(letter)) return;
     const charKey = document.querySelector(`#key-${letter}`);
     if (charKey.disabled) return;
     console.log('button not disabled');
