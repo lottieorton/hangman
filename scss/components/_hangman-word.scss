@@ -16,4 +16,10 @@
             font-size: 3em;
         }
     }
+
+    @include q.laptop {
+        &__header {
+            font-size: 3.5em;
+        }
+    }
 }

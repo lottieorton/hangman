@@ -1,0 +1,7 @@
+@use '../mixins/mixins' as *;
+@use '../mixins/media_queries' as q;
+
+.gameplay {
+    @include flex(column, center);  
+    align-items: center;      
+}

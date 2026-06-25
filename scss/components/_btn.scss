@@ -1,4 +1,5 @@
 @use '../variables/colors' as c;
+@use '../mixins/media_queries' as q;
 
 .btn {
     border: 1px solid c.$main;
@@ -39,6 +40,14 @@
         transform: none;
         &:focus {
             outline: none;
+        }
+    }
+
+    @include q.laptop {
+        font-size: 1.35em;
+
+        &--lg {
+            font-size: 1.75em;
         }
     }
 }

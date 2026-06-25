@@ -8,6 +8,10 @@
     gap: 0.5em;
 
     @include q.large-tablet {
-        width: 80%;
+        width: 90%;
+    }
+
+    @include q.laptop {
+        width: 100%;
     }
 }

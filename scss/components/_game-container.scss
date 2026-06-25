@@ -1,8 +1,12 @@
 @use '../mixins/mixins' as *;
-@use '../variables/fonts' as *;
-@use '../variables/colors' as c;
+@use '../mixins/media_queries' as q;
 
 .game-container {
-    @include flex(column);
-    align-items: center;
+    padding: 1em;
+
+    @include q.laptop {
+        @include flex(row, space-between);
+        align-items: center;
+        min-height: 60vh;
+    }
 }
