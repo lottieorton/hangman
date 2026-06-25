@@ -209,11 +209,15 @@ summary {
 }
 @media screen and (min-width: 1200px) {
   .game-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
     min-height: 60vh;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .game-container {
+    padding: 2em;
+    grid-template-columns: 60% 40%;
   }
 }
 
@@ -230,6 +234,11 @@ summary {
 @media screen and (min-width: 1200px) {
   .header__main-heading {
     font-size: 4.5em;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .header__main-heading {
+    font-size: 8em;
   }
 }
 
@@ -250,8 +259,7 @@ summary {
 @media screen and (min-width: 1200px) {
   .img {
     min-width: 500px;
-    max-width: 1000px;
-    flex-grow: 2;
+    max-width: 1500px;
   }
 }
 
@@ -276,6 +284,11 @@ summary {
     font-size: 3.5em;
   }
 }
+@media screen and (min-width: 1800px) {
+  .hangman-word__header {
+    font-size: 6em;
+  }
+}
 
 .scores {
   display: flex;
@@ -297,6 +310,11 @@ summary {
 @media screen and (min-width: 1200px) {
   .scores__title {
     font-size: 2.5em;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .scores__title {
+    font-size: 4em;
   }
 }
 
@@ -347,6 +365,14 @@ summary {
     font-size: 1.75em;
   }
 }
+@media screen and (min-width: 1800px) {
+  .btn {
+    font-size: 2.25em;
+  }
+  .btn--lg {
+    font-size: 3em;
+  }
+}
 
 .keys {
   display: flex;
@@ -393,12 +419,27 @@ summary {
     font-size: 2.5em;
   }
 }
+@media screen and (min-width: 1800px) {
+  .game-finished {
+    gap: 2.5em;
+  }
+  .game-finished__message {
+    font-size: 4em;
+  }
+}
 
 .gameplay {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+@media screen and (min-width: 1800px) {
+  .gameplay {
+    flex: 1;
+    min-width: 575px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

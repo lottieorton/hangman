@@ -15,7 +15,6 @@
 
     @include q.laptop {
         min-width: 500px;
-        max-width: 1000px;
-        flex-grow: 2;;
+        max-width: 1500px;
     }
 }

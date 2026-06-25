@@ -24,4 +24,11 @@
             font-size: 2.5em;
         }
     }
+
+    @include q.large-desktop {
+        gap: 2.5em;
+        &__message {
+            font-size: 4em;
+        }
+    }
 }

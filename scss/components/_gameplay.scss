@@ -3,5 +3,11 @@
 
 .gameplay {
     @include flex(column, center);  
-    align-items: center;      
+    align-items: center;
+    width: 100%;
+    
+    @include q.large-desktop {
+        flex: 1;
+        min-width: 575px;
+    }
 }

@@ -19,4 +19,10 @@
             font-size: 4.5em;
         }
     }
+
+    @include q.large-desktop {
+        &__main-heading {
+            font-size: 8em;
+        }
+    }
 }

@@ -22,4 +22,10 @@
             font-size: 3.5em;
         }
     }
+
+    @include q.large-desktop {
+        &__header {
+            font-size: 6em;
+        }
+    }
 }
