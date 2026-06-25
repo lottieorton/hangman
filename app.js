@@ -25,6 +25,16 @@ const initialGameSetup = () => {
 };
 initialGameSetup();
 
+// grabs existing scores on initial page load
+const rawScores = localStorage.getItem('scores');
+if(rawScores) {
+    const scores = JSON.parse(rawScores);
+    wins = scores[0];
+    losses = scores[1];
+    renderScores(wins, losses);
+};
+
+
 // add event listener to play again button
 playAgainBtn.addEventListener('click', (e) => {
     renderNextImage(incorrectGuessesRemaining, guesses, true);
@@ -53,6 +63,7 @@ const handlePlayerGuess = (guess) => {
     const gameResult = checkIfGameOver();
     if(gameResult) {
         gameResult === 'win' ? wins++ : losses++;
+        localStorage.setItem('scores', JSON.stringify([wins, losses]));
         renderGameFinishedMessage(gameResult);
         renderScores(wins, losses);
         toggleAllKeys(true);
