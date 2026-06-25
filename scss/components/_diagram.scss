@@ -3,8 +3,10 @@
 .diagram {
     @include flex(row, center);
     width: 100%;
+    margin: 0;
 }
 
 .img {
-    max-width: 90%;
+    max-width: 675px;
+    width: 90%;
 }

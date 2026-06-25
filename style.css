@@ -216,16 +216,23 @@ summary {
   font-size: 3.5em;
   margin: 0.5em 0 0 0;
 }
+@media screen and (min-width: 769px) {
+  .header__main-heading {
+    font-size: 4em;
+  }
+}
 
 .diagram {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  margin: 0;
 }
 
 .img {
-  max-width: 90%;
+  max-width: 675px;
+  width: 90%;
 }
 
 .hangman-word {
@@ -239,17 +246,28 @@ summary {
   margin: 0;
   padding: 0.25em;
 }
+@media screen and (min-width: 769px) {
+  .hangman-word__header {
+    font-size: 3em;
+  }
+}
 
 .scores {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 1em;
+  gap: 1em;
   width: 80%;
 }
 .scores__title {
+  font-size: 1.75em;
   margin: 0;
-  padding: 0.5em;
+}
+@media screen and (min-width: 769px) {
+  .scores__title {
+    font-size: 2em;
+  }
 }
 
 .btn {
@@ -262,6 +280,10 @@ summary {
   color: #fafafa;
   box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.2), 0 1px 4px 1px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+.btn--lg {
+  font-size: 1.5em;
+  padding: 0.5em 1em;
 }
 .btn:focus {
   outline-style: solid;
@@ -296,6 +318,11 @@ summary {
   padding: 1em;
   gap: 0.5em;
 }
+@media screen and (min-width: 769px) {
+  .keys {
+    width: 80%;
+  }
+}
 
 .game-finished {
   display: flex;
@@ -306,7 +333,14 @@ summary {
   gap: 0.5em;
 }
 .game-finished__message {
+  font-size: 1.75em;
   margin: 0;
+  text-align: center;
+}
+@media screen and (min-width: 769px) {
+  .game-finished__message {
+    font-size: 2em;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

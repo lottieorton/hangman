@@ -1,9 +1,16 @@
 @use '../variables/fonts' as *;
+@use '../mixins/media_queries' as q;
 
 .header {
     &__main-heading {
         text-align: center;
         font-size: 3.5em;
         margin: 0.5em 0 0 0;
+    }
+
+    @include q.large-tablet {
+        &__main-heading {
+            font-size: 4em;
+        }
     }
 }
