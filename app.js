@@ -1,5 +1,5 @@
 import  wordList  from './assets/word-list.json' with { type: 'json' };
-import { renderKey, renderNextImage, toggleAllKeys, renderGameFinishedMessage, removeGameFinishedMessage, renderScores, renderElement, hideElement, handleKeyboardInput } from './js/DOM.js';
+import { renderKey, renderNextImage, toggleAllKeys, renderGameFinishedMessage, removeGameFinishedMessage, renderScores, renderElement, hideElement, handleKeyboardInput, renderPlayedWords } from './js/DOM.js';
 import { revealCharacters } from './js/word-functions.js';
 
 // html elements
@@ -14,6 +14,7 @@ let word = '';
 let wordArr = [];
 let hangmanWordArr = [];
 let incorrectGuessesRemaining = 0;
+let playedWords = [];
 
 const initialGameSetup = () => {
     word = wordList[Math.floor(Math.random() * wordList.length)];
@@ -29,10 +30,17 @@ initialGameSetup();
 const rawScores = localStorage.getItem('scores');
 if(rawScores) {
     const scores = JSON.parse(rawScores);
-    wins = scores[0];
-    losses = scores[1];
+    wins = scores.wins;
+    losses = scores.losses;
     renderScores(wins, losses);
 };
+
+const rawPlayedWords = localStorage.getItem('playedWords');
+if(rawPlayedWords) {
+    playedWords = JSON.parse(rawPlayedWords);
+    renderPlayedWords(playedWords);
+};
+
 
 
 // add event listener to play again button
@@ -63,8 +71,11 @@ const handlePlayerGuess = (guess) => {
     const gameResult = checkIfGameOver();
     if(gameResult) {
         gameResult === 'win' ? wins++ : losses++;
-        localStorage.setItem('scores', JSON.stringify([wins, losses]));
+        localStorage.setItem('scores', JSON.stringify({wins: wins, losses: losses}));
         renderGameFinishedMessage(gameResult);
+        playedWords.push(word);
+        localStorage.setItem('playedWords', JSON.stringify(playedWords));
+        renderPlayedWords(playedWords);
         renderScores(wins, losses);
         toggleAllKeys(true);
         renderElement(playAgainBtn);

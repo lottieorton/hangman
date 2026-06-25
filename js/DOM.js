@@ -62,3 +62,11 @@ export const handleKeyboardInput = (e, handleGuess, keyList) => {
     handleGuess(letter);
     document.querySelector(`#key-${letter}`).disabled = true;
 }
+
+export const renderPlayedWords = wordList => {
+    const playedWordEl = document.querySelector(".played-words");
+    console.log('got');
+    playedWordEl.innerHTML = `
+    <h3 class="played-words__text">Previous words: ${wordList.join(', ')}</h3>
+    `;
+}
