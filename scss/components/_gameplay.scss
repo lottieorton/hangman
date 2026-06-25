@@ -1,0 +1,13 @@
+@use '../mixins/mixins' as *;
+@use '../mixins/media_queries' as q;
+
+.gameplay {
+    @include flex(column, center);  
+    align-items: center;
+    width: 100%;
+    
+    @include q.large-desktop {
+        flex: 1;
+        min-width: 575px;
+    }
+}

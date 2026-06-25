@@ -1,8 +1,17 @@
 @use './mixins/mixins' as *;
+@use './variables/fonts' as *;
+@use './variables/colors' as c;
 
 body {
     @include flex(column);
     align-items: center;
+    background-color: c.$bg;
+    font-family: $main-text;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header-text;
+    color: c.$main;
 }
 
 .hidden {

@@ -1,7 +1,7 @@
 export const renderKey = (letter, handlePlayerGuess) => {
     const keysParent = document.querySelector('.keys');
     const key = document.createElement('button');
-    key.className = 'key-btn';
+    key.className = 'btn key-btn';
     key.id = `key-${letter}`;
     key.setAttribute('data-key', letter);
     key.innerHTML = letter;
@@ -30,20 +30,19 @@ export const renderGameFinishedMessage = (result) => {
     const message = document.createElement('h2');
     message.className = 'game-finished__message';
     message.innerText = result === 'win' ? 'Wooo, well done on beating the hangman!' : 'They got you this time, better luck next time';
-    gameFinishedContainer.appendChild(message);
+    gameFinishedContainer.insertAdjacentElement('afterbegin', message);
 }
 
 export const removeGameFinishedMessage = (result) => {
-    const gameFinishedContainer = document.querySelector('.game-finished');
+    const gameFinishedContainer = document.querySelector('.game-finished__message');
     gameFinishedContainer.innerHTML = '';
 }
 
 export const renderScores = (wins, losses) => {
-    const scoresContainer = document.querySelector('.scores-container');
-    scoresContainer.innerHTML = `
-        <h2>Wins: ${wins}</h2>
-        <h2>Losses: ${losses}</h2>
-    `;
+    const winScore = document.querySelector(".scores__title--win");
+    const lossScore = document.querySelector(".scores__title--loss");
+    winScore.innerText = wins;
+    lossScore.innerText = losses;
 }
 
 export const renderElement = (element) => {

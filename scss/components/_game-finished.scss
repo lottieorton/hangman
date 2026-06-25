@@ -1,0 +1,34 @@
+@use '../mixins/mixins' as *;
+@use '../mixins/media_queries' as q;
+
+.game-finished{
+    @include flex(column);
+    align-items: center;
+    padding: 0 1.5em 1em 1.5em;
+    gap: 0.5em;
+    &__message {
+        font-size: 1.75em;
+        margin: 0;
+        text-align: center;
+    }
+
+    @include q.large-tablet {
+        &__message {
+            font-size: 2em;
+        }
+    }
+
+    @include q.laptop {
+        gap: 1.5em;
+        &__message {
+            font-size: 2.5em;
+        }
+    }
+
+    @include q.large-desktop {
+        gap: 2.5em;
+        &__message {
+            font-size: 4em;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@use '../mixins/mixins' as *;
+@use '../mixins/media_queries' as q;
+
+.game-container {
+    padding: 1em;
+
+    @include q.laptop {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        min-height: 60vh;
+    }
+
+    @include q.desktop {
+        padding: 2em;
+        grid-template-columns: 60% 40%;
+    }
+}
