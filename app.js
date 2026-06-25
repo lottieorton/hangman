@@ -1,5 +1,5 @@
 import  wordList  from './assets/word-list.json' with { type: 'json' };
-import { renderKey, renderNextImage, toggleAllKeys, renderGameFinishedMessage, removeGameFinishedMessage, renderScores, renderElement, hideElement } from './js/DOM.js';
+import { renderKey, renderNextImage, toggleAllKeys, renderGameFinishedMessage, removeGameFinishedMessage, renderScores, renderElement, hideElement, handleKeyboardInput } from './js/DOM.js';
 import { revealCharacters } from './js/word-functions.js';
 
 // html elements
@@ -74,3 +74,6 @@ const handlePlayerGuess = (guess) => {
 // rendering the letter keys
 const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 alphabet.forEach((char) => renderKey(char, handlePlayerGuess));
+
+// adding in keyboard functionality
+document.addEventListener('keydown', event => handleKeyboardInput(event, handlePlayerGuess));

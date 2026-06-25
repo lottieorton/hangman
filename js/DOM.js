@@ -52,3 +52,12 @@ export const renderElement = (element) => {
 export const hideElement = (element) => {
     element.classList.add("hidden");
 }
+
+export const handleKeyboardInput = (e, handleGuess) => {
+    const letter = e.key;
+    const charKey = document.querySelector(`#key-${letter}`);
+    if (charKey.disabled) return;
+    console.log('button not disabled');
+    handleGuess(letter);
+    document.querySelector(`#key-${letter}`).disabled = true;
+}
