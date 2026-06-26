@@ -1,5 +1,5 @@
 export const renderKey = (letter, handlePlayerGuess) => {
-    const keysParent = document.querySelector('.keys');
+    const keysParent = document.querySelector('.gameplay__keys');
     const key = document.createElement('button');
     key.className = 'btn key-btn';
     key.id = `key-${letter}`;
@@ -26,16 +26,16 @@ export const toggleAllKeys = (shouldDisable) => {
 }
 
 export const renderGameFinishedMessage = (result) => {
-    const gameFinishedContainer = document.querySelector('.game-finished');
+    const gamePlayContainer = document.querySelector('.gameplay');
     const message = document.createElement('h2');
-    message.className = 'game-finished__message';
+    message.className = 'gameplay__result-message';
     message.innerText = result === 'win' ? 'Wooo, well done on beating the hangman!' : 'They got you this time, better luck next time';
-    gameFinishedContainer.insertAdjacentElement('afterbegin', message);
+    gamePlayContainer.insertAdjacentElement('afterbegin', message);
 }
 
 export const removeGameFinishedMessage = (result) => {
-    const gameFinishedContainer = document.querySelector('.game-finished__message');
-    gameFinishedContainer.innerHTML = '';
+    const gamePlayMessage = document.querySelector('.gameplay__result-message');
+    gamePlayMessage.innerHTML = '';
 }
 
 export const renderScores = (wins, losses) => {

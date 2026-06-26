@@ -1,0 +1,21 @@
+@use '../mixins/mixins' as *;
+@use '../mixins/media_queries' as q;
+
+.hangman-visual {
+    @include flex(row, center);
+    width: 100%;
+    margin: 0;
+
+    &__img {
+        max-width: 675px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+
+        @include q.laptop {
+            min-width: 500px;
+            max-width: 1500px;
+        }
+    }
+}
+

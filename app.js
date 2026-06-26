@@ -3,8 +3,8 @@ import { renderKey, renderNextImage, toggleAllKeys, renderGameFinishedMessage, r
 import { revealCharacters } from './js/word-functions.js';
 
 // html elements
-const hangmanWord = document.querySelector('.hangman-word__header');
-const playAgainBtn = document.querySelector('.game-finished__btn');
+const hangmanWord = document.querySelector('.gameplay__word');
+const playAgainBtn = document.querySelector('.gameplay__replay-btn');
 
 // initial setup
 let wins = 0;

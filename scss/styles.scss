@@ -2,11 +2,8 @@
 @use './normalize';
 @use './components/game-container';
 @use './components/header';
-@use './components/diagram';
-@use './components/hangman-word';
+@use './components/hangman-visual';
 @use './components/scores';
 @use './components/btn';
-@use './components/keys';
-@use './components/game-finished';
 @use './components/gameplay';
 @use './components/played-words';
