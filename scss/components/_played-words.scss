@@ -1,0 +1,25 @@
+
+@use '../mixins/media_queries' as q;
+
+.played-words {
+    padding: 0.5em;
+    font-size: 1.25em;
+    &__text {
+        margin: 0;
+    };
+
+    @include q.large-tablet {
+        padding-left: 2em;
+        padding-right: 2em;
+        font-size: 1.35em
+    }
+
+    @include q.laptop {
+        font-size: 1.75em;
+        grid-column: span 2;
+    }
+
+    @include q.large-desktop {
+        font-size: 3em;
+    }
+}

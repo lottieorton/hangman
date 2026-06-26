@@ -442,4 +442,30 @@ summary {
   }
 }
 
+.played-words {
+  padding: 0.5em;
+  font-size: 1.25em;
+}
+.played-words__text {
+  margin: 0;
+}
+@media screen and (min-width: 769px) {
+  .played-words {
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1.35em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .played-words {
+    font-size: 1.75em;
+    grid-column: span 2;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .played-words {
+    font-size: 3em;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
