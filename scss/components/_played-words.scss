@@ -1,24 +1,33 @@
 @use '../mixins/media_queries' as q;
+@use '../variables/colors' as c;
 
 .played-words {
     padding: 0.5em;
-    font-size: 1.25em;
+    
     &__text {
+        color: c.$secondary;
+        font-size: 1.25em;
         margin: 0;
     };
 
     @include q.large-tablet {
         padding-left: 2em;
         padding-right: 2em;
-        font-size: 1.35em
+        &__text {
+            font-size: 1.35em
+        }
     }
 
     @include q.laptop {
-        font-size: 1.75em;
         grid-column: span 2;
+        &__text {
+            font-size: 1.75em;
+        }
     }
 
     @include q.large-desktop {
-        font-size: 3em;
+        &__text {
+            font-size: 3em;
+        }
     }
 }

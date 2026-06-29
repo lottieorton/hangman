@@ -394,6 +394,7 @@ summary {
   }
 }
 .gameplay__result-message {
+  color: #19535F;
   font-size: 1.75em;
   margin: 0;
   text-align: center;
@@ -416,26 +417,31 @@ summary {
 
 .played-words {
   padding: 0.5em;
-  font-size: 1.25em;
 }
 .played-words__text {
+  color: #19535F;
+  font-size: 1.25em;
   margin: 0;
 }
 @media screen and (min-width: 769px) {
   .played-words {
     padding-left: 2em;
     padding-right: 2em;
+  }
+  .played-words__text {
     font-size: 1.35em;
   }
 }
 @media screen and (min-width: 1200px) {
   .played-words {
-    font-size: 1.75em;
     grid-column: span 2;
+  }
+  .played-words__text {
+    font-size: 1.75em;
   }
 }
 @media screen and (min-width: 1800px) {
-  .played-words {
+  .played-words__text {
     font-size: 3em;
   }
 }
